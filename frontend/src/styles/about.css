@@ -1,0 +1,118 @@
+.aboutus-bg-section {
+  width: 100%;
+  min-height: 320px;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.aboutus-bg-overlay {
+  background: rgba(130, 131, 130, 0.65); /* green overlay */
+  width: 100%;
+  height: 100%;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutus-bg-title {
+  color: #fff;
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.aboutus-bg-desc {
+  color: #f0f0f0;
+  font-size: 1.2rem;
+  max-width: 700px;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.28), 0 1px 6px rgba(0,0,0,0.12);
+}
+
+.heading2{
+    text-align: center;
+    font: 700;
+    font-size: 1.8rem; 
+    font-family: sans-serif;
+    color: #666; 
+}
+
+.heading2 span{
+    color:#238b45;
+}
+
+@media (max-width: 900px) {
+  .aboutus-bg-title {
+    font-size: 2rem;
+  }
+  .aboutus-bg-desc {
+    font-size: 1rem;
+    max-width: 95vw;
+  }
+  .aboutus-bg-overlay {
+    padding: 40px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutus-bg-section {
+    min-height: 180px;
+    margin-bottom: 20px;
+  }
+  .aboutus-bg-title {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  .aboutus-bg-desc {
+    font-size: 0.98rem;
+    padding: 0 8px;
+    max-width: 98vw;
+  }
+  .aboutus-bg-overlay {
+    padding: 18px 0;
+  }
+  .heading2 {
+    font-size: 1.1rem;
+    padding: 0 8px;
+  }
+  .card-section {
+    padding: 0 4px !important;
+    max-width: 100vw !important;
+  }
+  .card {
+    padding: 1rem !important;
+    font-size: 0.98rem;
+  }
+  .card-title {
+    font-size: 1.1rem !important;
+  }
+  .card-description {
+    font-size: 0.98rem !important;
+  }
+  .card-section ul {
+    margin-left: 1rem !important;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .aboutus-bg-title {
+    font-size: 1rem;
+  }
+  .aboutus-bg-desc {
+    font-size: 0.92rem;
+  }
+  .heading2 {
+    font-size: 0.98rem;
+  }
+  .card-title {
+    font-size: 1rem !important;
+  }
+}

@@ -1,0 +1,296 @@
+/* src/styles/navbar.css */
+
+:root {
+    --red: #4292c6;
+}
+
+header {
+    font-family: serif;
+    position: fixed; /* Makes the header stay at the top */
+    top: 1rem;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensures header is above other content */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.7); /* Transparent white */
+    padding: 2rem 9%; /* Padding around header content */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 10px rgba(0, 0, 0, 0.19);    max-width: 95%;
+    width: 70%;
+    border-radius: 1rem;
+    margin: 0 auto;
+    opacity: 1; /* Slightly transparent for a modern look */
+    transition: background 0.3s ease, box-shadow 0.3s ease
+     /* Subtle shadow */
+}
+
+header .logo {
+  
+    display: flex; /* Helps align the image if needed, though for a single image it's less critical */
+    align-items: center; /* Vertically centers the image within the link */
+    text-decoration: none; /* Remove any default link underline */
+}
+
+/* New style for your logo image */
+header .logo .logo-image {
+    height: 4rem; /* Adjust this value to control the logo's height. */
+                  /* Using rem for consistency with your existing font-sizes. */
+    width: auto;  /* Ensures the image scales proportionally */
+    display: block; /* Removes any extra space below the image */
+    max-height: 100%; /* Ensures it doesn't overflow its parent if the header height changes */
+    position: static;
+    margin: 0;
+    align-self: center;
+}
+
+
+/* If you had an icon inside the logo text, style it here.
+   If you're fully replacing text with an image, this rule might become obsolete. */
+/* header .logo i {
+    padding-right: .5rem;
+    color: var(--red);
+} */
+
+header .navbar a {
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    color: #666;
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 600;
+}
+
+header .navbar a:hover {
+    color: #238b45; /* Change color on hover */
+}
+
+/* Hide hamburger icon by default, show only on small screens */
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    z-index: 1100;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+.navbar-toggle:active,
+.navbar-toggle:focus {
+    background: #e5e7eb;
+}
+
+/* Desktop nav links */
+.desktop-nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Show hamburger icon only on mobile */
+@media (max-width: 700px) {
+    .navbar-toggle {
+        display: block;
+        position: relative;
+    }
+    .desktop-nav-links {
+        display: none !important;
+    }
+    .navbar {
+        position: relative;
+    }
+    .mobile-nav-dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        min-width: 200px;
+        max-width: 100vw;
+        height: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #fff;
+   
+        box-shadow: 2px 0 16px rgba(0,0,0,0.10);
+        margin-left: 0.2rem;
+        top: 1rem;
+        z-index: 2000;
+        padding: 2.5rem 1.2rem 1.2rem 1.2rem;
+        box-sizing: border-box;
+        /* Remove full height, only fit content */
+    }
+    .navbar.open .mobile-nav-dropdown {
+        transform: translateX(0);
+        transition: transform 0.35s cubic-bezier(.4,0,.2,1);
+    }
+    /* Overlay for background dim */
+    .mobile-nav-overlay {
+        display: block;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.25);
+        z-index: 1999;
+        animation: fadeIn 0.25s;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .mobile-link {
+        display: block;
+        padding: 0.7rem 0;
+        font-size: 1.1rem;
+        color: #333;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+        text-decoration: none;
+    }
+    .mobile-link:last-child {
+        border-bottom: none;
+    }
+    .mobile-dropdown {
+        margin-bottom: 0.5rem;
+    }
+    .mobile-dropdown-btn {
+        width: 100%;
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-align: left;
+        padding: 0.7rem 0;
+        color: #222;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+    }
+    .mobile-nav-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 2100;
+        color: #222;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        transition: color 0.2s;
+    }
+    .mobile-nav-close:hover {
+        color: #238b45;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start; /* Logo on the left */
+        padding: 0.7rem 1vw;
+        width: 100vw;
+        border-radius: 0.5rem;
+        background: rgba(255,255,255,0.95);
+    }
+    .navbar-toggle {
+        order: 2; /* Hamburger after logo */
+        margin-left: auto; /* Push hamburger to the far right */
+        margin-right: 0;
+    }
+    header .logo {
+        order: 1; /* Logo first */
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
+        align-items: center;
+        display: flex;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+    }
+    header .logo .logo-image {
+        height: 2.5rem;
+        min-height: 2.5rem;
+        max-height: 4rem;
+        width: auto;
+        max-width: 180px;
+        min-width: 60px;
+        object-fit: contain;
+        position: static;
+        margin: 0;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        border-radius: 0;
+        display: block;
+        align-self: center;
+    }
+    header .navbar {
+        margin-top: 0.5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header .navbar a {
+        margin: 0.5rem 0 0.5rem 0;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 701px) {
+    .navbar-toggle {
+        display: none !important;
+    }
+    .desktop-nav-links {
+        display: flex !important;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    header {
+        padding: 1.2rem 3vw;
+        width: 90%;
+        max-width: 100vw;
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 1rem 2vw;
+        width: 98vw;
+        max-width: 100vw;
+        border-radius: 0.7rem;
+    }
+    header .logo .logo-image {
+        height: 3rem;
+    }
+    header .navbar a {
+        font-size: 1.1rem;
+        margin-left: 1.2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 0.4rem 0.5vw;
+        border-radius: 0.2rem;
+        width: 100vw;
+        min-width: 0;
+    }
+    header .logo .logo-image {
+        height: 2rem;
+        min-height: 2rem;
+        max-height: 3rem;
+        width: auto;
+        min-width: 50px;
+    }
+    header .navbar a {
+        font-size: 0.95rem;
+        margin-left: 0.7rem;
+    }
+}

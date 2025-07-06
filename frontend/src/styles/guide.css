@@ -1,0 +1,810 @@
+/* General Body and Container Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f0eaea; /* White background */
+  color: #666; /* Dark gray text */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  background: #fff;
+  color: #666;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+header .logo {
+  color: #238b45; /* Green for logo */
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+header .navbar a {
+  color: #666;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+header .navbar a:hover {
+  color: #238b45; /* Green on hover */
+}
+
+/* Page Heading and Description */
+.page-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-top: 7rem;
+  margin-bottom: 10px;
+}
+
+.page-heading span {
+  color: #238b45; /* Green for the span text */
+}
+
+.page-des {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+/* Tour Guides Grid */
+.tour-guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 20px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.guide-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guide-image-container {
+  position: relative;
+  width: 100%;
+  height: 250px; /* Fixed height for images */
+  overflow: hidden;
+ 
+}
+
+.guide-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.guide-rating {
+  display: none;
+}
+
+.guide-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.guide-name {
+  font-size: 1.7rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.guide-specialty {
+  font-size: 1rem;
+  color: #238b45; /* Green for specialty */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.guide-languages {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.guide-languages i {
+  margin-right: 8px;
+  color: #238b45; /* Green icon */
+}
+
+.guide-bio {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Allows bio to take up available space */
+}
+
+.guide-button {
+  display: inline-block;
+  background: #238b45; /* Green button */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: flex-start; /* Aligns button to the start within flex column */
+}
+
+.guide-button:hover {
+  background-color: #1a6f37; /* Darker green on hover */
+  transform: translateY(-2px);
+}
+
+/* Guide Modal Styles */
+.guide-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+ 
+}
+
+.guide-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.guide-modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 98vw;
+  max-width: 520px;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.guide-modal-overlay.active .guide-modal-content {
+  transform: translateY(0);
+}
+
+.close-guide-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-guide-btn:hover {
+  color: #333;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-pic-large {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid #238b45; /* Green border */
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.profile-specialty {
+  font-size: 1.1rem;
+  color: #238b45; /* Green for specialty */
+  font-weight: 500;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #238b45; /* Green underline */
+  padding-bottom: 5px;
+  display: inline-block; /* To make underline only as wide as text */
+}
+
+.profile-bio-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-list li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.details-list li strong {
+  color: #333;
+  min-width: 120px; /* Align content */
+}
+
+.details-list li i {
+  margin-right: 10px;
+  color: #238b45; /* Green icon */
+  font-size: 1.1rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #333; /* Dark background */
+  color: #fff;
+  padding: 40px 5%;
+  margin-top: 50px;
+}
+
+.footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-content {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-content h3 {
+  color: #fff; /* Green heading */
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #238b45;
+  padding-bottom: 10px;
+}
+
+.footer-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-content ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.footer-content ul li a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-content ul li a:hover {
+  color: #238b45; /* Green on hover */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #eee;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #238b45; /* Green on hover */
+}
+
+.credit {
+  text-align: center;
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.credit span a {
+  color: #238b45; /* Green for name link */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.credit span a:hover {
+  color: #fff;
+}
+
+/* Background image section before Meet Our Tour Guides */
+.tourguide-bg-section {
+  width: 100%;
+  min-height: 320px;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.tourguide-bg-overlay {
+  background: rgba(152, 155, 153, 0.65); /* green overlay */
+  width: 100%;
+  height: 100%;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tourguide-bg-title {
+  color: #fff;
+  font-size: 2.7rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.tourguide-bg-desc {
+  color: #f0f0f0;
+  font-size: 1.2rem;
+  max-width: 700px;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.12);
+}
+
+/* Overlay text on guide image */
+.guide-image-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.guide-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(34,139,69,0.85) 70%, rgba(34,139,69,0.25) 100%, transparent 100%);
+  color: #fff;
+  padding: 18px 16px 12px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.guide-image-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.guide-image-specialty {
+  font-size: 0.98rem;
+  font-weight: 400;
+  opacity: 0.92;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.28), 0 1px 6px rgba(0,0,0,0.12);
+}
+
+/* Slider Dots Styles */
+.slider-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slider-dots span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bfc5c7;
+  transition: background 0.3s linear, opacity 0.3s linear;
+  pointer-events: none;
+  opacity: 0.8;
+  will-change: background, opacity;
+}
+
+.slider-dots span.active {
+  background: #238b45;
+  box-shadow: 0 0 6px #238b4599;
+  opacity: 1;
+}
+
+/* Remove slider arrow button styles if present */
+.slider-arrow,
+.slider-arrow.left,
+.slider-arrow.right {
+  display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 20px;
+  }
+
+  header .navbar {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header .navbar a {
+    margin: 8px 0;
+  }
+
+  .page-heading {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  .page-des {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .tour-guides-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    padding: 20px;
+  }
+
+  .guide-modal-content {
+    padding: 25px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-pic-large {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .profile-specialty {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.3rem;
+  }
+
+  .details-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-list li strong {
+    min-width: unset;
+    margin-bottom: 5px;
+  }
+
+  .footer .container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-content {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-heading {
+    font-size: 1.8rem;
+  }
+
+  .guide-name {
+    font-size: 1.5rem;
+  }
+
+  .guide-specialty {
+    font-size: 0.9rem;
+  }
+
+  .guide-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+  .tour-guides-grid {
+    gap: 18px;
+    padding: 12px 2vw;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .guide-card {
+    font-size: 1rem;
+  }
+  .guide-image-container {
+    height: 180px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0 4px;
+  }
+  .tour-guides-grid {
+    gap: 10px;
+    padding: 8px 1vw;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  .guide-card {
+    font-size: 0.98rem;
+  }
+  .guide-image-container {
+    height: 120px;
+  }
+  .guide-content {
+    padding: 12px;
+  }
+  .guide-name {
+    font-size: 1.1rem;
+  }
+  .guide-specialty {
+    font-size: 0.95rem;
+  }
+  .guide-bio {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0 2px;
+  }
+  .tour-guides-grid {
+    gap: 6px;
+    padding: 4px 0.5vw;
+    grid-template-columns: 1fr;
+  }
+  .guide-card {
+    font-size: 0.92rem;
+    padding: 0.5rem !important;
+  }
+  .guide-image-container {
+    height: 80px;
+  }
+  .guide-content {
+    padding: 8px;
+  }
+  .guide-name {
+    font-size: 0.98rem;
+  }
+  .guide-specialty {
+    font-size: 0.85rem;
+  }
+  .guide-bio {
+    font-size: 0.85rem;
+  }
+  .guide-button {
+    font-size: 0.92rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Responsive modal */
+@media (max-width: 600px) {
+  .guide-modal-content {
+    width: 98vw;
+    max-width: 98vw;
+    padding: 10px;
+    font-size: 0.98rem;
+  }
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+  .profile-pic-large {
+    width: 60px;
+    height: 60px;
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .profile-name {
+    font-size: 1.1rem;
+  }
+  .profile-specialty {
+    font-size: 0.95rem;
+  }
+  .section-heading {
+    font-size: 1.1rem;
+  }
+  .details-list li {
+    font-size: 0.92rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .details-list li strong {
+    min-width: unset;
+    margin-bottom: 3px;
+  }
+}
+
+/* Responsive background image section */
+@media (max-width: 700px) {
+  .tourguide-bg-section {
+    min-height: 160px;
+    margin-bottom: 18px;
+  }
+  .tourguide-bg-title {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+  .tourguide-bg-desc {
+    font-size: 0.98rem;
+    padding: 0 8px;
+    max-width: 98vw;
+  }
+  .tourguide-bg-overlay {
+    padding: 18px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .tourguide-bg-title {
+    font-size: 1rem;
+  }
+  .tourguide-bg-desc {
+    font-size: 0.92rem;
+  }
+}
+
+/* Responsive footer */
+@media (max-width: 700px) {
+  .footer {
+    padding: 18px 4px;
+  }
+  .footer .container {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 2px;
+  }
+  .footer-content {
+    min-width: auto;
+    padding: 10px 0;
+    font-size: 0.98rem;
+  }
+  .footer-content h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .footer-content ul li {
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+  }
+  .social-icons {
+    gap: 8px;
+  }
+  .social-icons a {
+    font-size: 20px;
+  }
+  .credit {
+    font-size: 0.95rem;
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    padding: 8px 1px;
+  }
+  .footer-content h3 {
+    font-size: 0.92rem;
+  }
+  .footer-content ul li {
+    font-size: 0.85rem;
+  }
+  .social-icons a {
+    font-size: 16px;
+  }
+  .credit {
+    font-size: 0.85rem;
+  }
+}

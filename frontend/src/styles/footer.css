@@ -1,0 +1,172 @@
+.footer {
+    top: 100px; /* This might need adjustment depending on your overall layout */
+    background-color: #1C1D20;
+    color: #A3A9B8;
+    padding: 50px 40px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.credit {
+    padding: 2.5rem 1rem;
+    color: #A3A9B8;
+    font-weight: normal;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.credit span {
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.footerContent {
+    flex: 1;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+.footerContent h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.footerContent ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerContent ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footerContent ul li a {
+    text-decoration: none;
+    color: #A3A9B8;
+    transition: color 0.3s ease;
+}
+
+.footerContent ul li a:hover {
+    color: white;
+}
+
+.socialIcons {
+    display: flex;
+    padding: 0;
+    /* justify-content: space-between; This might cause issues if too few icons, consider gap or space-around */
+    gap: 15px; /* Added gap for better spacing between icons */
+}
+
+.socialIcons li {
+    margin-right: 10px; /* Keep margin for backward compatibility if gap isn't fully supported */
+    list-style: none;
+}
+
+.socialIcons a {
+    color: #A3A9B8;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.socialIcons a:hover {
+    color: white;
+}
+
+/* Media queries for responsiveness can be added here if needed */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footerContent {
+        padding: 20px 0;
+    }
+    .socialIcons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .footer {
+        padding: 36px 16px;
+    }
+    .credit {
+        font-size: 1.3rem;
+        padding: 1.5rem 0.5rem;
+    }
+    .footerContent h3 {
+        font-size: 1.1rem;
+    }
+    .footerContent ul li {
+        font-size: 0.98rem;
+    }
+    .footerContent {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 18px 4px;
+    }
+    .credit {
+        font-size: 1rem;
+        padding: 1rem 0.2rem;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 2px;
+        gap: 8px;
+    }
+    .footerContent {
+        padding: 10px 0;
+        font-size: 0.98rem;
+    }
+    .footerContent h3 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .footerContent ul li {
+        font-size: 0.92rem;
+        margin-bottom: 6px;
+    }
+    .socialIcons {
+        gap: 8px;
+    }
+    .socialIcons a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer {
+        padding: 8px 1px;
+    }
+    .credit {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.1rem;
+    }
+    .footerContent h3 {
+        font-size: 0.92rem;
+    }
+    .footerContent ul li {
+        font-size: 0.85rem;
+    }
+    .socialIcons a {
+        font-size: 16px;
+    }
+}
+

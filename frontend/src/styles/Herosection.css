@@ -1,0 +1,220 @@
+.hero-section {
+    position: relative; /* Needed for background image positioning */
+    width: 100%;
+    height: 60vh; /* Viewport height - adjust as desired */
+    /* This path must match the folder and filename in public exactly */
+    background: url('../img/mt-3840673.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    /* Crucial: Add padding-top to account for the fixed header */
+    padding-top: 10rem; 
+    font-family:serif;/* Adjust based on your header's actual height (e.g., 80px or 5rem) */
+    
+    z-index: 7;
+
+}
+
+.hero-content {
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.35), 0 2px 8px rgba(0,0,0,0.18);
+     /* Text shadow for readability */
+}
+
+.hero-subtitle {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.28), 0 1px 6px rgba(0,0,0,0.12);
+}
+
+.search-form-container {
+    top: 50rem;
+    background: #fff; /* Semi-transparent white background */
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between form fields and button */
+    box-shadow: 4px 4px 4px rgba(26, 25, 25, 0.12);
+    height: auto;
+    min-height: unset;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    opacity: 2rem;
+    margin-top: 550px;
+}
+
+
+.tabs-nav {
+    opacity: 0.95;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 12px rgba(60,60,60,0.08);
+    padding: 0.3rem 0.5rem 0 0.5rem;
+    margin-bottom: 0.5rem;
+    min-width: 0;
+    gap: 0.3rem;
+    width: 100%;
+   
+}
+
+.tabs-nav .tab-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 90px;
+    padding: 0.7rem 1.3rem 0.3rem 1.3rem;
+    margin: 0 0.2rem;
+    border-radius: 0.8rem 0.8rem 0 0;
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 1px 4px rgba(60,60,60,0.04);
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    transition: 
+        color 0.18s, 
+        background 0.18s, 
+        box-shadow 0.18s, 
+        transform 0.13s;
+}
+
+.tabs-nav .tab-link .tab-icon {
+    margin-bottom: 0.18rem;
+    font-size: 1.6rem;
+    color: #222;
+    transition: color 0.18s;
+}
+
+.tabs-nav .tab-link.active {
+    color: #238b45;
+    font-weight: 700;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(35,139,69,0.10);
+    transform: scale(1.06);
+}
+
+.tabs-nav .tab-link.active .tab-icon {
+    color: #238b45;
+}
+
+.tabs-nav .tab-link.active::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 70%;
+    background: #238b45;
+    border-radius: 2px 2px 0 0;
+    position: absolute;
+    left: 15%;
+    bottom: 0;
+}
+
+.tabs-nav .tab-link:not(.active) {
+    color: #444;
+    background: #f8f8f8;
+    font-weight: 500;
+    box-shadow: 0 1px 4px rgba(60,60,60,0.03);
+}
+
+.tabs-nav .tab-link:not(.active) .tab-icon {
+    color: #888;
+}
+
+.tabs-nav .tab-link:not(.active):hover {
+    background: #eaf7ef;
+    color: #238b45;
+    transform: scale(1.03);
+}
+
+.tabs-nav .tab-link:not(.active):hover .tab-icon {
+    color: #238b45;
+}
+
+/* New styles for hero text cover */
+.hero-text-cover {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+}
+
+.hero-main-title {
+    color: #fff;
+    font-size: 3.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px #222, 0 2px 16px #000;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.hero-sub-title {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 6px #222, 0 2px 12px #000;
+    margin-top: 0;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+    .tabs-nav .tab-link {
+        min-width: 70px;
+        font-size: 1rem;
+        padding: 0.5rem 0.7rem 0.1rem 0.7rem;
+    }
+    .hero-title {
+        font-size: 3.2rem;
+    }
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .tabs-nav {
+        gap: 0.1rem;
+        padding: 0.2rem 0.2rem 0 0.2rem;
+    }
+    .tabs-nav .tab-link {
+        min-width: 55px;
+        font-size: 0.95rem;
+        padding: 0.4rem 0.4rem 0.05rem 0.4rem;
+    }
+    .hero-title {
+        font-size: 2.1rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .search-form-container {
+        padding: 1rem;
+    }
+    .hero-main-title {
+        font-size: 2rem;
+    }
+    .hero-sub-title {
+        font-size: 1.1rem;
+    }
+    .hero-text-cover {
+        top: 32%;
+    }
+}

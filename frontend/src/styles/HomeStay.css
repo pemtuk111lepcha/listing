@@ -1,0 +1,671 @@
+/* Fix for heading1 class/ID mismatch */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f0eaea; /* White background */
+  color: #666; /* Dark gray text */
+  font-size: 1.8rem;
+}
+
+
+.heading1, #heading1 {
+    
+    width: 100%;
+    max-width: 100%;
+    background-color: #f0eaea;
+   
+    
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #666;
+    bottom: 10rem;
+}
+
+.heading1 span, #heading1 span {
+    color: #238b45;
+}
+
+/*CARD*/
+/* Card Section Styles */
+.card-section {
+    padding: 1rem 2rem 2rem 2rem;
+    /* Overall padding for the section */
+    display: grid;
+    gap: 1.2rem;
+    /* Space between cards */
+    /* Responsive grid: 300px min-width per card, adjusts to available space */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* restore min width to 300px */
+    justify-content: center;
+    /* Center cards in the grid */
+    max-width: 1200px;
+    /* Max width for the card section */
+    margin: 1rem auto 2rem auto;
+    /* Center the entire section on the page */
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 1rem;
+    /* Rounded corners for the card */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    overflow: hidden;
+    /* Ensures content stays within rounded corners */
+    display: flex;
+    flex-direction: column;
+    /* Stack image, content, button vertically */
+    justify-content: space-between;
+    /* Push content to top, button to bottom */
+    transition: transform 0.2s ease-in-out;
+    /* Smooth hover effect */
+    min-width: 0;
+    max-width: none; /* remove max-width restriction */
+    margin: 0 auto;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /* Lift card slightly on hover */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    /* Fixed height for consistent image size */
+    object-fit: cover;
+    /* Ensures image covers the area without distortion */
+    border-bottom: 1px solid #eee;
+    /* Subtle separator */
+}
+
+.card-content {
+    padding: 1.5rem;
+    /* Padding inside the card content area */
+    flex-grow: 1;
+    /* Allows content to take up available space */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size:1.5rem;
+    /* Large font size for title */
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    /* Standard font size for description */
+    color: #666;
+    line-height: 1.5;
+    /* Good line spacing for readability */
+    flex-grow: 1;
+    /* Allows description to expand and push button down */
+    margin-bottom: 1.5rem;
+}
+
+/* View More Button Section */
+.view-more-container {
+    display: none !important;
+}
+
+.view-more-btn {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-section {
+        gap: 1.5rem;
+        padding: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .card-title {
+        font-size: 2rem;
+    }
+    .card-description {
+        font-size: 1.5rem;
+    }
+    .btn0 {
+        padding: 0.7rem 1.2rem;
+        font-size: 1.1rem;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-section {
+        padding: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .card-title {
+        font-size: 1.8rem;
+    }
+    .card-description {
+        font-size: 1.4rem;
+    }
+    .btn0 {
+        padding: 0.6rem 0.7rem;
+        font-size: 1rem;
+        max-width: 120px;
+    }
+}
+
+/*why section*/
+
+/* Heading Style */
+.heading {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 1rem;
+    color: #666;
+    /* Darker heading color for better contrast */
+    margin-bottom: 3rem;
+    /* Increased space below the heading */
+    font-weight: 600;
+}
+
+.heading span {
+    color: #238b45;
+}
+
+/* Why My Destiny Section Styles */
+.why-destiny-section {
+
+    /* Adjusted padding, less horizontal padding to fit the centered layout */
+    background-color: #fefefe;
+    /* Slightly different background for the section */
+    max-width: 90%;
+    /* Limit max width to resemble the image more */
+    width: 100%;
+    /* Ensure it's responsive */
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    position: relative;
+    gap: 2rem;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    /* Stack features vertically */
+    gap: 2rem;
+    /* Space between feature items */
+    padding: 0 5rem;
+    font-size: 1rem;
+    /* Inner padding for the list to push content from edges */
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 1rem;
+    gap: 1.2rem;
+}
+
+.feature-icon-wrapper {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #238b45;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    /* Icon size within the circle */
+    color: #fff;
+    /* White icon color */
+    margin-bottom: 0;
+    /* Remove previous margin */
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    justify-content: center;
+    text-align: left;
+}
+
+.feature-item h3 {
+    font-size: 1.6rem;
+    color: #222;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+    text-transform: none;
+    margin-right: 0;
+    text-align: left;
+}
+
+.feature-item p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .why-destiny-section {
+        padding: 1rem 2%;
+        /* Adjust padding for smaller screens */
+    }
+
+    .features-list {
+        padding: 0 1rem;
+        /* Adjust inner padding */
+    }
+
+    .heading {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .feature-item i {
+        font-size: 2.2rem;
+    }
+
+    .feature-item h3 {
+        font-size: 2rem;
+    }
+
+    .feature-item p {
+        font-size: 1.5rem;
+    }
+
+    .feature-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .features-list {
+        padding: 0 1rem;
+    }
+    .feature-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .feature-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+    .feature-item h3 {
+        margin-right: 0;
+    }
+}
+
+/* Button Styles */
+.btn0 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #238b45;
+    padding: 1rem 2.5rem;
+    border: 1px solid #238b45;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s, color 0.2s;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    position: relative;
+    outline: none;
+}
+
+.btn0::before, .btn0::after {
+    display: none;
+}
+
+.btn0:hover, .btn0:focus {
+    background-color: #238b45;
+    color: #fff;
+    border-color: #1a6f37;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.btn0:hover::before, .btn0:hover::after,
+.btn0:focus::before, .btn0:focus::after {
+    background: #1a6f37;
+    opacity: 1;
+}
+
+.btn0:active {
+    background-color: #c8e6c9;
+    color: #1a6f37;
+    border-color: #1a6f37;
+    transform: scale(0.98);
+}
+
+.btn0:active::before, .btn0:active::after {
+    background: #1a6f37;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .btn0 {
+        padding: 0.7rem 1.2rem;
+        font-size: 1.1rem;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn0 {
+        padding: 0.6rem 0.7rem;
+        font-size: 1rem;
+        max-width: 120px;
+    }
+}
+
+/* Slider Styles */
+.card-image-slider {
+    position: relative;
+    background: #181d1f;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 12px;
+    z-index: 10;
+    pointer-events: none;
+    background: none !important;
+    min-height: 24px;
+    /* Prevent layout shift by reserving space always */
+    height: 24px;
+}
+
+.slider-dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #bfc5c7;
+    transition: background 0.3s linear, opacity 0.3s linear;
+    pointer-events: none;
+    opacity: 0.8;
+    will-change: background, opacity;
+}
+
+.slider-dots span.active {
+    background: #d6ff1c;
+    box-shadow: 0 0 6px #d6ff1c99;
+    opacity: 1;
+}
+
+.card-image-slider:hover .slider-dots,
+.card-image-slider:focus .slider-dots {
+    z-index: 10;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: background 0.3s;
+}
+.modal-content {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.modal-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin-bottom: 0;
+    position: relative;
+}
+.modal-image {
+    max-width: 96vw;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    border-radius: 1.2rem;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.35);
+    background: #222;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+}
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 32px;
+    font-size: 2.8rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    transition: color 0.2s;
+    filter: drop-shadow(0 2px 8px #000a);
+}
+.modal-close:hover {
+    color: #d6ff1c;
+}
+.slider-arrow {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 2.2rem;
+    cursor: pointer;
+    margin: 0 18px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.85;
+}
+.slider-arrow.left {
+    left: 12px;
+}
+.slider-arrow.right {
+    right: 12px;
+}
+.slider-arrow:hover {
+    background: #d6ff1c;
+    color: #222;
+    opacity: 1;
+}
+.modal-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(24,29,31,0.85);
+    padding: 10px 0 16px 0;
+    border-radius: 0 0 1.2rem 1.2rem;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: auto;
+}
+.modal-thumbnails img {
+    width: 64px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 0.4rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border 0.2s, transform 0.2s;
+    background: #222;
+}
+.modal-thumbnails img.active {
+    border: 2px solid #d6ff1c;
+    transform: scale(1.08);
+}
+@media (max-width: 900px) {
+    .modal-image {
+        max-width: 98vw;
+        max-height: 60vh;
+    }
+    .modal-thumbnails img {
+        width: 44px;
+        height: 32px;
+    }
+    .slider-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 600px) {
+    .modal-image {
+        max-width: 99vw;
+        max-height: 40vh;
+    }
+    .modal-thumbnails img {
+        width: 32px;
+        height: 22px;
+    }
+    .slider-arrow {
+        width: 28px;
+        height: 28px;
+        font-size: 1.1rem;
+    }
+    .modal-close {
+        font-size: 2rem;
+        top: 8px;
+        right: 12px;
+    }
+}
+
+/* Responsive adjustments for card section and cards */
+@media (max-width: 900px) {
+  .card-section {
+    padding: 1rem 1vw 1.5rem 1vw;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    max-width: 100vw;
+  }
+  .card {
+    padding: 1rem !important;
+    font-size: 1rem;
+  }
+  .card-title {
+    font-size: 1.2rem;
+  }
+  .card-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-section {
+    padding: 0.5rem 0.5vw 1rem 0.5vw;
+    gap: 0.7rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  .card {
+    padding: 0.7rem !important;
+    font-size: 0.98rem;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-description {
+    font-size: 0.95rem;
+  }
+  .card-image {
+    height: 120px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-section {
+    padding: 0.2rem 0.2vw 0.5rem 0.2vw;
+    gap: 0.4rem;
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 0.4rem !important;
+    font-size: 0.92rem;
+  }
+  .card-title {
+    font-size: 0.92rem;
+  }
+  .card-description {
+    font-size: 0.9rem;
+  }
+  .card-image {
+    height: 80px;
+  }
+}
+
+/* Responsive heading */
+@media (max-width: 900px) {
+  .heading1, #heading1 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .heading1, #heading1 {
+    font-size: 1rem;
+    padding: 0 4px;
+  }
+}
+@media (max-width: 400px) {
+  .heading1, #heading1 {
+    font-size: 0.92rem;
+  }
+}
