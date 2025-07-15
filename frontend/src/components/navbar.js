@@ -35,7 +35,7 @@ const Header = () => {
                 <nav className={`navbar${menuOpen ? ' open' : ''}`}>
                     <div className="desktop-nav-links">
                         <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
-                        <Link to="/footer" onClick={() => setMenuOpen(false)}>Contact Us</Link>
+                        <Link to="/blog" onClick={() => setMenuOpen(false)}>Blog</Link>
                     </div>
                     {/* Overlay for background dim */}
                     {menuOpen && (

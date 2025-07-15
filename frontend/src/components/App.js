@@ -5,10 +5,12 @@ import HomeStay from "./HomeStay";
 import TourGuide from "./TourGuide";
 import Hotels from "./hotels";
 import Resorts from "./Resorts";
-import Cab from "./Cab";
+import ComingSoon from "./ComingSoon";
 import PlaceOfInterest from "./PlaceOfInterest";
 import Activities from "./Activities";
 import AboutUs from "./AboutUs";
+import Blog from "./Blog"; // Add this import
+import Cab from "./Cab";
 
 export default function App() {
   return (
@@ -24,13 +26,10 @@ export default function App() {
         <Route path="/places-of-interest" element={<PlaceOfInterest />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/about" element={<AboutUs />} />
-         <Route path="/tourguide" element={<TourGuide />} />
-         <Route path="/footer" element={<footer />} />
-        {/* Add more routes as you create more pages */}
-        {/* <Route path="/activities" element={<Activities />} /> */}
-        {/* <Route path="/places" element={<PlaceOfInterest />} /> */}
+        <Route path="/tourguide" element={<TourGuide />} />
+        <Route path="/footer" element={<footer />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
-   
     </>
   );
 }

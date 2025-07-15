@@ -12,6 +12,13 @@ import ghonday3 from '../img/RESORT/ghonday/1 (11).jpeg';
 import ghonday4 from '../img/RESORT/ghonday/1 (6).jpeg';
 import ghonday5 from '../img/RESORT/ghonday/1 (7).jpeg';
 
+import reesum1 from '../img/RESORT/reesum/r1.jpg';
+import reesum2 from '../img/RESORT/reesum/r2.jpg';
+import reesum3 from '../img/RESORT/reesum/r3.jpeg';
+import reesum4 from '../img/RESORT/reesum/r4.jpg';
+import reesum5 from '../img/RESORT/reesum/r5.jpg';
+
+
 // Image Modal component
 function ImageModal({ open, images, current, onClose, onPrev, onNext }) {
   if (!open) return null;
@@ -186,13 +193,13 @@ const kalukListings = [
     images: [ghonday1, ghonday2, ghonday3, ghonday4, ghonday5]
   },
   {
-    imageSrc: 'https://avatars.githubusercontent.com/u/13995641?s=400&v=4',
-    imageAlt: 'Will Add More',
-    title: 'Will Add More',
-    description: 'More beautiful resorts will be added soon. Stay tuned!',
-    link: '#',
-    contact: '',
-    images: ['https://avatars.githubusercontent.com/u/13995641?s=400&v=4']
+    imageSrc: reesum1,
+    imageAlt: 'Ressum Resort',
+    title: 'Reesum Resort',
+    description: 'Immerse yourself in the heart of authentic Sikkimese hospitality and embark on the journey that goes beyond accommodation - its an invitation to experience the rich culture and tranquility of rural sikkim.',
+    link: 'https://www.reesumresort.com',
+    contact: '+91 97335525509/ 9641614647',
+    images: [reesum1, reesum2, reesum3, reesum4, reesum5]
   }
 ];
 

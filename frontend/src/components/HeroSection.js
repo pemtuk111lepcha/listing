@@ -12,7 +12,7 @@ const HeroSection = () => {
         { name: 'Hotels', icon: <Hotel size={24} />, route: '/hotels' },
         { name: 'Places of Interest', icon: <MapPin size={24} />, route: '/places-of-interest' },
         { name: 'Activities', icon: <Activity size={24} />, route: '/activities' },
-        { name: 'Cab', icon: <Car size={24} />, route: '#' },
+        { name: 'Cab', icon: <Car size={24} />, route: '/cab' },
         { name: 'TourGuide', icon: <User size={24} />, route: '/tourguide' },
     ];
 

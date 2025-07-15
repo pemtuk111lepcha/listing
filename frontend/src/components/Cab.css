@@ -135,7 +135,7 @@ button:disabled, select:disabled {
 .input-label {
     font-size: 0.875rem; /* text-sm */
     font-weight: 500; /* font-medium */
-    color: #6b7280; /* text-gray-500 */
+    color: #000000; /* text-gray-500 */
     display: block;
     margin-bottom: 0.25rem; /* mb-1 */
 }

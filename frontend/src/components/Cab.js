@@ -80,8 +80,35 @@ const App = () => {
   const [fullCarCategory, setFullCarCategory] = useState('luxury');
   const [fullCarModel, setFullCarModel] = useState('');
   const [selectedSeats, setSelectedSeats] = useState([]);
+  const [userLocation, setUserLocation] = useState('');
 
   const today = new Date().toISOString().split('T')[0];
+
+  // Auto-detect user location on mount
+  React.useEffect(() => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          const { latitude, longitude } = pos.coords;
+          // Use a free reverse geocoding API (OpenStreetMap Nominatim)
+          fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+            .then(res => res.json())
+            .then(data => {
+              // Try to extract a meaningful location name
+              let locName = '';
+              if (data.address) {
+                locName = data.address.city || data.address.town || data.address.village || data.address.hamlet || data.address.suburb || data.address.state || '';
+              }
+              setUserLocation(locName);
+              // If location matches one of LOCATIONS, set as pickup
+              if (LOCATIONS.includes(locName)) setPickup(locName);
+            })
+            .catch(() => {});
+        },
+        () => {}
+      );
+    }
+  }, []);
 
   // Helper function to calculate distance
   const calculateDistance = (pickupLoc, dropoffLoc) => {
@@ -465,6 +492,10 @@ const App = () => {
           <div className="input-field-wrapper">
             <span className="input-icon"><icons.MapPin color="#3B82F6" /></span>
             <select id="pickup-location" className="input-select" value={pickup} onChange={handleInputChange} disabled={loading}>
+              {/* Add auto-detected location option if available */}
+              {userLocation && !LOCATIONS.includes(userLocation) && (
+                <option value={userLocation}>{`Your Location (${userLocation})`}</option>
+              )}
               {LOCATIONS.map((loc) => (
                 <option key={loc} value={loc} disabled={loc === dropoff && loc !== ''}>
                   {loc || 'Select Pick Up Point'}
@@ -473,6 +504,12 @@ const App = () => {
             </select>
             <span className="select-arrow"><icons.ChevronDown /></span>
           </div>
+          {/* Show detected location below dropdown if not in list */}
+          {userLocation && !LOCATIONS.includes(userLocation) && (
+            <div style={{ fontSize: "0.95rem", color: "#238b45", marginTop: "0.3rem" }}>
+              Detected: {userLocation}
+            </div>
+          )}
         </div>
 
         <div className="input-card">
