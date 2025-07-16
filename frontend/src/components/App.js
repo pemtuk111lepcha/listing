@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/tour-guide" element={<TourGuide />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/resorts" element={<Resorts />} />
-        <Route path="/cab" element={<Cab />} />
+        <Route path="/comingsoon" element={<ComingSoon />} />
         <Route path="/places-of-interest" element={<PlaceOfInterest />} />
         <Route path="/activities" element={<Activities />} />
         <Route path="/about" element={<AboutUs />} />
